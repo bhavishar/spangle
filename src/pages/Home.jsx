@@ -15,8 +15,8 @@ export default function Home() {
       <About />
       <Timeline />
       <Services />
+       <Making />
       <ContactForm /> 
-      <Making />
       <Footer />
     </div>
   );

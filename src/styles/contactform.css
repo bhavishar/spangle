@@ -109,6 +109,17 @@ textarea {
   width: 16px;
   fill: white;
 }
+input,
+textarea,
+input::placeholder,
+textarea::placeholder,
+.form-field label {
+  font-family: "DM Sans", sans-serif !important;
+}
 
+/* Apply DM Sans to the submit button text */
+.contact-submit {
+  font-family: "DM Sans", sans-serif !important;
+}
 /* Responsive */
 @media (max-
