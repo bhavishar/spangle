@@ -1,0 +1,7 @@
+.about { padding: 40px 0; background: #e9f3f0; }
+.about-inner { max-width: 1100px; margin: auto; display:flex; gap:24px; align-items:center; padding: 40px 20px; }
+.about-left { flex: 1; }
+.about-right { width: 260px; }
+.partners { display:flex; gap:12px; justify-content:flex-end; }
+.logo { width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700; }
+@media (max-width: 900px) { .about-inner { flex-direction: column; } .about-right { width: 100%; } }

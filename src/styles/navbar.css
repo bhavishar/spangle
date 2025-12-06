@@ -1,0 +1,68 @@
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  background: #fceedf;
+  padding: 18px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+/* LOGO */
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  color: #e87a06;
+}
+
+/* RIGHT GROUP (MENU + BUTTON) */
+.nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* MENU LINKS */
+.nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links a {
+  color: #2c2c2c;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #e87a06;
+}
+
+/* CONTACT BUTTON */
+.contact-btn {
+  background: #e87a06;
+  padding: 12px 26px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0px 4px 12px rgba(232, 122, 6, 0.25);
+}
+
+.contact-btn:hover {
+  background: #cf6c04;
+}
