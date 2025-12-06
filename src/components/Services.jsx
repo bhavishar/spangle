@@ -181,22 +181,43 @@ export default function Services() {
       <div ref={sectionRef} className="services-inner">
         <p className="services-tag">OUR SERVICES</p>
         <h2>From Chaos to Clarity, We Make Communication Simple</h2>
+      <p
+  className="section-description"
+  style={{
+    color: "#545458",
+    fontFamily: "DM Sans, sans-serif",
+    fontSize: "16px",
+    lineHeight: "26px",
+    fontWeight: "400",
+    letterSpacing: "-0.2px",
+    opacity: 0.9,
+    marginTop: "12px"
+  }}
+>
+  We host an array of integrated communication services <br />
+  that help start-ups scale with stronger visibility and reputation.
+</p>
 
         <div className="services-grid">
           <div ref={(el) => cardsRef.current[0] = el} className="service-card">
             <div className="icon">📣</div>
             <h3>Digital Marketing</h3>
-            <p>Marketing strategy and campaigns that help you grow.</p>
+            <p>Visibility is everything. We blend creativity with performance-driven strategy to amplify your presence across digital channels – whether it’s social, search, or something in between.</p>
           </div>
           <div ref={(el) => cardsRef.current[1] = el} className="service-card">
             <div className="icon">📊</div>
             <h3>Research & Analysis</h3>
-            <p>Data-driven insights to shape your communications.</p>
+            <p>We believe strong communication starts with insight. Through market research, audience analysis, and media tracking, we decode what works – and why – so your messaging hits the mark.</p>
           </div>
           <div ref={(el) => cardsRef.current[2] = el} className="service-card">
             <div className="icon">🤝</div>
             <h3>Public Relations</h3>
-            <p>Reputation and media strategy to amplify your voice.</p>
+            <p>A brand is more than a logo – it’s a voice, a feeling, a story. We help you shape it from the ground up, crafting identity systems and positioning strategies that resonate and endure.</p>
+          </div>
+          <div ref={(el) => cardsRef.current[3] = el} className="service-card">
+            <div className="icon">🤝</div>
+            <h3>Brand Development</h3>
+            <p>A brand is more than a logo – it’s a voice, a feeling, a story. We help you shape it from the ground up, crafting identity systems and positioning strategies that resonate and endure.</p>
           </div>
         </div>
       </div>

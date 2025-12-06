@@ -1,24 +1,29 @@
 import React from "react";
 import "../styles/about.css";
+import gona from "../assets/Gona.webp";
 
-export default function About(){
+export default function About() {
   return (
-    <section id="about" className="about" data-aos="fade-up">
+    <section id="about" className="about">
       <div className="about-inner">
+
+        {/* LEFT SIDE */}
         <div className="about-left">
-          <h3>Trusted By</h3>
-          <h2>The giants, loved by the bold!</h2>
-          <p>From global teams to emerging brands, our storytelling helps brands get noticed.</p>
+          <div className="about-tag">TRUSTED BY</div>
+
+          <h2 className="about-heading">The giants, loved by the bold!</h2>
+
+          <p className="about-text">
+            From global icons to emerging names, our storytelling approach 
+            has helped brands scale visibility and trust in the digital era.
+          </p>
         </div>
 
+        {/* RIGHT SIDE IMAGE */}
         <div className="about-right">
-          <div className="partners">
-            <div className="logo">G</div>
-            <div className="logo">O</div>
-            <div className="logo">N</div>
-            <div className="logo">A</div>
-          </div>
+          <img src={gona} alt="Trusted logos" className="about-image" />
         </div>
+
       </div>
     </section>
   );
