@@ -9,27 +9,16 @@ export default function Making() {
 
   useEffect(() => {
     const rows = rowsRef.current.filter(Boolean);
-    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          } else {
-            entry.target.classList.remove("visible");
-          }
+          entry.target.classList.toggle("visible", entry.isIntersecting);
         });
       },
-      {
-        threshold: 0.2,
-        rootMargin: "-50px 0px -50px 0px"
-      }
+      { threshold: 0.2, rootMargin: "-50px 0px -50px 0px" }
     );
 
-    rows.forEach((row) => {
-      if (row) observer.observe(row);
-    });
-
+    rows.forEach((row) => row && observer.observe(row));
     return () => observer.disconnect();
   }, []);
 
@@ -37,7 +26,7 @@ export default function Making() {
     <section id="making" className="making">
       <style>{`
         .making {
-          background: #f5e6d3;
+          background: #FDF1E7;
           padding: 80px 20px;
         }
 
@@ -47,11 +36,21 @@ export default function Making() {
         }
 
         .making-title {
-          font-size: 48px;
-          font-weight: 800;
-          color: #1a1a1a;
           text-align: center;
-          margin-bottom: 80px;
+          font-family: "DM Sans", Sans-serif;
+          font-size: 40px;
+          font-weight: 700;
+          margin-bottom: 20px;
+          color: #121216;
+        }
+
+        .section-description {
+          max-width: 700px;
+          margin: 0 auto 80px auto;
+          text-align: center;
+          font-size: 18px;
+          color: #333;
+          line-height: 1.7;
         }
 
         .make-row {
@@ -60,8 +59,6 @@ export default function Making() {
           gap: 60px;
           align-items: center;
           margin-bottom: 100px;
-          
-          /* Slide up animation */
           opacity: 0;
           transform: translateY(60px);
           transition: all 0.8s ease;
@@ -73,19 +70,8 @@ export default function Making() {
         }
 
         .make-row.reverse {
-          opacity: 0;
-          transform: translateY(60px);
-        }
-
-        .make-row.reverse.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .make-row.reverse {
           direction: rtl;
         }
-
         .make-row.reverse > * {
           direction: ltr;
         }
@@ -102,50 +88,95 @@ export default function Making() {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          display: block;
         }
 
-        .make-text {
-          padding: 20px;
+        /* -------------------------
+           TITLE WRAP WITH A SINGLE LINE
+        -------------------------- */
+        .title-wrap {
+          position: relative;
+          padding-left: 24px;
         }
 
-        .make-text h3 {
-          font-size: 36px;
+        /* UNBROKEN ORANGE LINE */
+        .title-wrap::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0; 
+          width: 4px;
+          background: #ff8c42;
+          border-radius: 4px;
+        }
+
+        /* Remove spacing that breaks the line */
+        .title-wrap h2,
+        .title-wrap h3 {
+          margin: 0;
+          padding: 0;
+        }
+
+        .title-wrap h2 {
+          font-size: 32px;
           font-weight: 700;
-          color: #1a1a1a;
+          margin-bottom: 8px;
+          color: #121216;
+        }
+
+        .title-wrap h3 {
+          font-size: 22px;
+          font-weight: 600;
           margin-bottom: 20px;
-          border-left: 4px solid #ff8c42;
-          padding-left: 20px;
         }
 
         .make-text p {
-          font-size: 18px;
+          font-size: 20px;
           line-height: 1.7;
-          color: #555;
-          margin-bottom: 24px;
+          font-weight: 400;
+          color: #121216;
+          margin-bottom: 25px;
         }
 
         .make-text ul {
-          list-style: none;
           padding: 0;
-          margin: 0;
+          list-style: none;
         }
 
         .make-text ul li {
-          font-size: 16px;
-          color: #333;
+          font-size: 18px;
           padding: 10px 0;
           padding-left: 30px;
           position: relative;
+          color: #2d2d33;
         }
 
         .make-text ul li::before {
-          content: "✦";
+          content: "*";
           position: absolute;
           left: 0;
           color: #ff8c42;
-          font-size: 18px;
+          font-size: 20px;
+          display: flex;
+          font-size: 64px;
+          margin-block: -12px;
         }
+            .howto {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: #fff;
+  color: #e7750a;
+        margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: fit-content;  /* IMPORTANT */
+}
+
 
         @media (max-width: 968px) {
           .make-row,
@@ -155,34 +186,40 @@ export default function Making() {
             direction: ltr;
           }
 
-          .making-title {
-            font-size: 36px;
-            margin-bottom: 60px;
-          }
-
-          .make-text h3 {
-            font-size: 28px;
-          }
-
           .make-img {
             height: 300px;
+          }
+
+          .title-wrap h2 {
+            font-size: 26px;
+          }
+
+          .title-wrap h3 {
+            font-size: 20px;
           }
         }
       `}</style>
 
+      <p className="howto">HOW WE DO IT</p>
+
       <div className="making-inner">
         <h2 className="making-title">Making it simpler for you</h2>
+        <p className="section-description">
+          We offer integrated communication services that help Indian start-ups scale with a strong identity and industry reputation.
+        </p>
 
         {/* BLOCK 1 */}
-        <div ref={(el) => rowsRef.current[0] = el} className="make-row">
+        <div ref={(el) => (rowsRef.current[0] = el)} className="make-row">
           <div className="make-img">
             <img src={img1} alt="Research" />
           </div>
           <div className="make-text">
-            <h3>Deep Dives, Not Just Data.</h3>
+            <div className="title-wrap">
+              <h1>We Research</h1>
+              <h3>Deep Dives, Not Just Data.</h3>
+            </div>
             <p>
-              Before we tell your story, we learn it. We dig into your industry, competitors,
-              and audience to uncover trends and strategic opportunities.
+              Before we tell your story, we learn it. Our team digs into your industry, competitors, and audiences to uncover white spaces, trends, and opportunities. This insight-first approach powers content that actually connects.
             </p>
             <ul>
               <li>Audience insight</li>
@@ -194,15 +231,17 @@ export default function Making() {
         </div>
 
         {/* BLOCK 2 */}
-        <div ref={(el) => rowsRef.current[1] = el} className="make-row reverse">
+        <div ref={(el) => (rowsRef.current[1] = el)} className="make-row reverse">
           <div className="make-img">
             <img src={img2} alt="Manage" />
           </div>
           <div className="make-text">
-            <h3>We Manage</h3>
+            <div className="title-wrap">
+              <h2>We Manage</h2>
+              <h3>From Strategy to Screens—We’ve Got It Covered.</h3>
+            </div>
             <p>
-              We become an extension of your team—handling PR outreach, media relationships,
-              timelines, and creative deliverables.
+              We become an extension of your team—handling PR outreach, media relationships, timelines, and creative deliverables. You stay focused on growth while we orchestrate every moving part.
             </p>
             <ul>
               <li>End-to-end PR coordination</li>
@@ -214,15 +253,17 @@ export default function Making() {
         </div>
 
         {/* BLOCK 3 */}
-        <div ref={(el) => rowsRef.current[2] = el} className="make-row">
+        <div ref={(el) => (rowsRef.current[2] = el)} className="make-row">
           <div className="make-img">
             <img src={img3} alt="Work" />
           </div>
           <div className="make-text">
-            <h3>We Work</h3>
+            <div className="title-wrap">
+              <h2>We Work</h2>
+              <h3>Collaboration That Feels Seamless.</h3>
+            </div>
             <p>
-              Collaboration that feels seamless. We stay aligned with your goals and operate
-              like part of your team.
+              Working with us doesn’t feel like outsourcing—it feels like teaming up. We’re responsive, proactive, and plugged in to your business goals, making creative decisions feel easy and aligned.
             </p>
             <ul>
               <li>Agile collaboration</li>
@@ -234,15 +275,17 @@ export default function Making() {
         </div>
 
         {/* BLOCK 4 */}
-        <div ref={(el) => rowsRef.current[3] = el} className="make-row reverse">
+        <div ref={(el) => (rowsRef.current[3] = el)} className="make-row reverse">
           <div className="make-img">
             <img src={img4} alt="Familiar" />
           </div>
           <div className="make-text">
-            <h3>We Become Familiar</h3>
+            <div className="title-wrap">
+              <h2>We Become Familiar</h2>
+              <h3>We Don’t Just Know Your Brand—We Speak It Fluently.</h3>
+            </div>
             <p>
-              We immerse ourselves into your brand so we can speak it fluently—building messaging
-              that feels unmistakably you.
+              Our work reflects your voice, values, and vision because we immerse ourselves in them. The result? Messaging that feels intuitive, not outsourced—and stories that feel unmistakably you.
             </p>
             <ul>
               <li>Brand tone alignment</li>

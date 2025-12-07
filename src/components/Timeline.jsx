@@ -25,18 +25,18 @@ export default function Timeline({ items }) {
         "We bring our clients' stories to life — sparking conversations, building influence, and unlocking new opportunities across markets and media. Every story we tell opens doors to new audiences, new partnerships, and new avenues for growth.",
       highlight: false,
     },
-    {
-      title: "Our Impact",
-      body:
-        "Through strategic storytelling and authentic engagement, we help brands build lasting relationships with their audiences. Our work doesn't just generate buzz—it creates meaningful connections that drive real business results.",
-      highlight: false,
-    },
-    {
-      title: "Our Promise",
-      body:
-        "We're committed to excellence in every campaign, every story, and every interaction. When you partner with us, you're not just getting a service provider—you're gaining a dedicated ally in your success.",
-      highlight: true,
-    },
+    // {
+    //   title: "Our Impact",
+    //   body:
+    //     "Through strategic storytelling and authentic engagement, we help brands build lasting relationships with their audiences. Our work doesn't just generate buzz—it creates meaningful connections that drive real business results.",
+    //   highlight: false,
+    // },
+    // {
+    //   title: "Our Promise",
+    //   body:
+    //     "We're committed to excellence in every campaign, every story, and every interaction. When you partner with us, you're not just getting a service provider—you're gaining a dedicated ally in your success.",
+    //   highlight: true,
+    // },
   ];
 
   const data = Array.isArray(items) && items.length ? items : defaultItems;
@@ -139,14 +139,21 @@ const timelineCSS = `
   font-family: "Inter", sans-serif;
 }
 
-/* Small orange tag */
 .timeline-eyebrow {
-  color: #ff6b35;
+  display: inline-block;
+  background: #fdf1e7;   /* FORCE white background */
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: #ff6b35 !important;        /* force text color too */
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 2px;
+  text-transform: uppercase;
   margin-bottom: 16px;
+  width: fit-content;
 }
+
+
 
 /* intro paragraph */
 .timeline-intro {

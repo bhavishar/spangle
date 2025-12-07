@@ -80,7 +80,7 @@ export default function Services() {
           padding: 6px 14px;
           border-radius: 20px;
           background: #fff;
-          color: #6f9b8f;
+          color: #44806b;
           font-weight: 700;
           font-size: 14px;
           letter-spacing: 1px;
@@ -157,10 +157,15 @@ export default function Services() {
         }
 
         .service-card p {
-          font-size: 16px;
-          line-height: 1.6;
-          color: rgba(255, 255, 255, 0.85);
-          margin: 0;
+         font-size: 20px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.85);
+        margin: 0;
+        font-family: "DM Sans", Sans-serif;
+        font-weight: 400;
+        line-height: 32px;
+        letter-spacing: -0.2px;
+        color: #e8efed;
         }
 
         @media (max-width: 900px) {
@@ -194,8 +199,8 @@ export default function Services() {
     marginTop: "12px"
   }}
 >
-  We host an array of integrated communication services <br />
-  that help start-ups scale with stronger visibility and reputation.
+  We host an array of integrated communication services that help start-ups in India scale to <br />
+  newer heights with visible identity & reputation in the industry they operate.
 </p>
 
         <div className="services-grid">
@@ -209,16 +214,17 @@ export default function Services() {
             <h3>Research & Analysis</h3>
             <p>We believe strong communication starts with insight. Through market research, audience analysis, and media tracking, we decode what works – and why – so your messaging hits the mark.</p>
           </div>
-          <div ref={(el) => cardsRef.current[2] = el} className="service-card">
-            <div className="icon">🤝</div>
-            <h3>Public Relations</h3>
-            <p>A brand is more than a logo – it’s a voice, a feeling, a story. We help you shape it from the ground up, crafting identity systems and positioning strategies that resonate and endure.</p>
-          </div>
           <div ref={(el) => cardsRef.current[3] = el} className="service-card">
             <div className="icon">🤝</div>
             <h3>Brand Development</h3>
             <p>A brand is more than a logo – it’s a voice, a feeling, a story. We help you shape it from the ground up, crafting identity systems and positioning strategies that resonate and endure.</p>
           </div>
+          <div ref={(el) => cardsRef.current[2] = el} className="service-card">
+            <div className="icon">🤝</div>
+            <h3>Public Relations</h3>
+            <p>We help brands earn the right attention. From media outreach to reputation management, our PR strategies are crafted to build trust, shape perception, and spark conversation where it matters most.</p>
+          </div>
+          
         </div>
       </div>
     </section>
