@@ -21,8 +21,9 @@ export default function Hero() {
             that connects, converts, and stays remembered.
           </p>
 
-          <motion.button
-  className="hero-btn"
+     <motion.a
+  href="#contact"
+  className="hero-btn no-underline"
   initial={{ opacity: 0, y: 15 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.6, delay: 0.35 }}
@@ -36,7 +37,8 @@ export default function Hero() {
   >
     <path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z" />
   </svg>
-</motion.button>
+</motion.a>
+
         </div>
 
         {/* RIGHT SIDE IMAGE */}
